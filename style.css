@@ -1,0 +1,128 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #fef1df;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+.formulaire {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0 6rem 0;
+}
+
+ .formulaire form {
+    color: black;
+    font-weight: bold;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 350px;
+}
+
+.formulaire h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 0;
+}
+
+.formulaire form .séparation {
+    border-top: 1px solid rgba(0, 0, 0, 0.288);
+}
+
+.formulaire form .corps-formulaire {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+} 
+
+.formulaire form .corps-formulaire .contenu {
+    width: 100%;
+}
+
+.formulaire form .corps-formulaire .boite {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.formulaire form .séparation {
+    border-top: 1px solid rgba(0, 0, 0, 0.288);
+}
+
+.formulaire form .corps-formulaire .contenu .boite input {
+    margin-top: 5px;
+    padding: 10px 5px 10px 10px;
+    border: 1px solid #c9c9c9;
+    outline-color: #747cdf;
+    border-radius: 5px;
+}
+
+.formulaire form .pied-formulaire {
+    text-align: center;
+}
+
+.formulaire form .pied-formulaire button {
+    margin-top: 10px;
+    background-color: #06cb10;
+    color: white;
+    font-size: 20px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.formulaire form .pied-formulaire button:hover {
+     transform: scale(1.1);
+}
+
+.list h1 {
+    font-size: 40px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.81);
+}
+ 
+ .list .tab {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+ 
+ table {
+     width: 600px;
+     border-collapse: collapse;
+     margin: 20px 0;
+     border: 1px solid;
+}
+ 
+ thead {
+     background-color: #0638ea;
+}
+ 
+ th, td {
+     padding: 8px;
+     border-bottom: 1px solid #ddd;
+}
+ 
+ tr:hover {
+     background-color: #b4b0b0;
+     color: black;
+}
+ 
+ .trash a {
+    background-color: #c74141;
+    padding: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
