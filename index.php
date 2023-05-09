@@ -1,5 +1,24 @@
 <?php 
 
+require './ManagerPage.php';
+
+$managerTask = new ManagerTask();
+$allTasks = $managerTask->getAllTask();
+
+    if(isset($_POST['title']) && isset($_POST['description']) && isset($_POST['important'])) {
+        $newTask = new Task();
+        $newTask->setTitle($_POST['title']);
+        $newTask->setDescription($_POST['description']);
+        $newTask->setImportant(boolval($_POST['important']));
+        $managerTask->create($newTask);
+    } 
+
+// Gère la suppression
+if (isset($_GET['delete']) && !empty($_GET['delete'])) {
+    $managerTask->delete($_GET['delete']);
+}
+
+$getAllTasks = $managerTask->getAllTask();
 
 ?>
 
@@ -21,18 +40,19 @@
                 <div class="contenu">
                     <div class="boite">
                         <label for="title">Titre</label>
-                        <input type="text" name="title" maxlength="50">
+                        <input type="text" name="title" maxlength="50" value="">
                     </div>
                     <div class="boite">
                         <label for="description">Description</label>
-                        <input type="text" name="description" maxlength="150">
+                        <input type="text" name="description" maxlength="150" value="">
                     </div>
                     <div class="boite">
                         <label for="important">Important</label>
                         <select type="select" name="important">
-                            <option value="false">Pas important</option>
-                            <option value="true">Important</option>
+                          <option value="false">Pas important</option>
+                          <option value="true">Important</option>
                         </select>
+
                     </div>
                 </div>
             </div>
@@ -56,12 +76,14 @@
             </tr>
             </thead>
             <tbody>
-             <tr>
-             <!-- <td><?php echo $game->getName(); ?></td> 
-             <td><?php echo $game->getStation(); ?></td>
-             <td><?php echo $game->getFormat(); ?></td> 
-             <td><a href="admin_game.php?delete=<?php echo $game->getId(); ?>" class="trash">Supprimer</a></td> -->
-             </tr>
+            <?php foreach ($getAllTasks as $task) { ?>
+            <tr>
+             <td><?php echo $task->getTitle(); ?></td> 
+             <td><?php echo $task->getDescription(); ?></td> 
+             <td><?php echo $task->getImportant() ? 'Important' : 'Pas important'; ?></td>
+             <td><a href="index.php?delete=<?php echo $task->getId(); ?>" class="trash">Supprimer</a></td>  
+            </tr>
+             <?php } ?>
             </tbody>
           </table>
         </div>
